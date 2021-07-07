@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
+    display: 'grid',
+    gridTemplateRows: '60% 20% 20%',
+    gap: '20px',
     '& h2': {
       marginBottom: '20px',
       textAlign: 'center',
@@ -53,6 +56,7 @@ const Home = () => {
     <>
       <section className={classes.main}>
         <div className={classes.title}>
+          <div></div>
           <h2>Time</h2>
           <h3>{timee ? `${timee}  ${dateee}` : 'Loading...'} </h3>
         </div>

@@ -28,7 +28,7 @@ const Navbar = () => {
           style={{ padding: '10px 0px' }}
           className={classes.title}
         >
-          Jammat
+          TimeTables of months
         </Typography>
       </div>
     </>
