@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     display: 'grid',
     gridTemplateRows: '60% 20% 20%',
-    gap: '20px',
+    gap: '10px',
     '& h2': {
       marginBottom: '20px',
       textAlign: 'center',
@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
   },
   times: {
     width: '70%',
+    display: 'grid',
+    gridTemplateAreas: '100%',
+    gridTemplateRows: '1fr',
   },
 }))
 const Home = () => {
@@ -58,7 +61,8 @@ const Home = () => {
         <div className={classes.title}>
           <div></div>
           <h2>Time</h2>
-          <h3>{timee ? `${timee}  ${dateee}` : 'Loading...'} </h3>
+          <h3>{timee ? `${timee}  ` : 'Loading...'} </h3>
+          <h3>{timee ? `${dateee}  ` : 'Loading...'} </h3>
         </div>
         <div className={classes.times}>
           <Table {...dataa} />
