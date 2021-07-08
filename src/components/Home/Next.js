@@ -36,43 +36,25 @@ const useStyles = makeStyles({
   },
 })
 
-export default function CustomizedTables({
-  Fajr,
-  Dhuhr,
-  Asr,
-  Maghrib,
-  Isha,
-  newTime,
-}) {
+export default function CustomizedTables({ Upcoming, remaining }) {
   const classes = useStyles()
-  const rows = [
-    createData('Fajr', Fajr),
-    createData('Dhuhr', Dhuhr),
-    createData('Asr', Asr),
-    createData('Maghrib', Maghrib),
-    createData('Isha', Isha),
-  ]
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label='customized table'>
         <TableHead>
           <TableRow>
-            <StyledTableCell>Jammat</StyledTableCell>
-            <StyledTableCell align='right'>Time</StyledTableCell>
+            <StyledTableCell>Upcoming Prayer</StyledTableCell>
+            <StyledTableCell align='right'>Remaining Time</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
-            <StyledTableRow
-              key={row.name}
-              style={newTime === index ? { backgroundColor: '#00BFFF' } : {}}
-            >
-              <StyledTableCell component='th' scope='row'>
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align='right'>{row.time}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+          <StyledTableRow>
+            <StyledTableCell component='th' scope='row'>
+              {Upcoming}
+            </StyledTableCell>
+            <StyledTableCell align='right'>{remaining} h</StyledTableCell>
+          </StyledTableRow>
         </TableBody>
       </Table>
     </TableContainer>
