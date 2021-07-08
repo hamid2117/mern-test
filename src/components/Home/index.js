@@ -21,7 +21,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     display: 'grid',
     gridTemplateRows: '60% 20% 20%',
+    '@media (max-width: 800px)': {
+      gridTemplateRows: '50% 25% 25%',
+    },
     gap: '10px',
+    '@media (max-width: 500px)': {
+      gridTemplateRows: '30% 35% 35%',
+      gap: '2px',
+    },
     '& h2': {
       marginBottom: '20px',
       textAlign: 'center',
@@ -55,12 +62,41 @@ const Home = () => {
     setDateee(Datee)
   }
   setInterval(Timer, 1000)
+  // var time = new Date()
+  // const newTimee = time.toLocaleString('en-US', {
+  //   hour: 'numeric',
+  //   minute: 'numeric',
+  //   hour12: true,
+  // })
+
+  // console.log(dataa.Isha)
+  // console.log(newTimee)
+  // console.log(dataa.Fajr)
+  // console.log(if(newTimee === dataa.Isha){})
+
+  // if (newTimee === dataa.Isha) {
+  //   return setColortime(4)
+  // }
+  // if (newTimee === dataa.Fajr) {
+  //   return setColortime(0)
+  // }
+  // if (newTimee === dataa.Dhuhr) {
+  //   return setColortime(1)
+  // }
+  // if (newTimee === dataa.Asr) {
+  //   return setColortime(2)
+  // }
+  // if (newTimee === dataa.Maghrib) {
+  //   return setColortime(3)
+  // }
+  // console.log(newTimee === dataa.Isha)
+
   return (
     <>
       <section className={classes.main}>
         <div className={classes.title}>
           <div></div>
-          <h2>Time</h2>
+          <div></div>
           <h3>{timee ? `${timee}  ` : 'Loading...'} </h3>
           <h3>{timee ? `${dateee}  ` : 'Loading...'} </h3>
         </div>

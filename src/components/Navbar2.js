@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { IconButton } from '@material-ui/core'
-import { AppBar, Toolbar, Typography } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -15,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     margin: 'auto 14px',
     color: 'white',
+    '@media (max-width: 500px)': {
+      fontSize: '20px',
+    },
   },
 }))
 const Navbar = () => {

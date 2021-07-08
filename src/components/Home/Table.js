@@ -45,7 +45,9 @@ export default function CustomizedTables({ Fajr, Dhuhr, Asr, Maghrib, Isha }) {
     createData('Maghrib', Maghrib),
     createData('Isha', Isha),
   ]
-
+  const newDate = new Date().getHours()
+  var time = new Date()
+  console.log(newDate)
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label='customized table'>
@@ -56,7 +58,7 @@ export default function CustomizedTables({ Fajr, Dhuhr, Asr, Maghrib, Isha }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((row, index) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component='th' scope='row'>
                 {row.name}
